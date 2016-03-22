@@ -1,0 +1,72 @@
+// out: ../css/style.css, compress: true
+/*
+Theme Name: Chapel Tavern
+Theme URI: http://chapeltavern.com
+Description: Ruthless bar theme for Chapel Tavern.
+Author: Peter Laxalt
+Author URI: http://laxaltandmciver.co
+Version: 0.1
+Tags: landing page, bar, salon, tavern, drinking, witchcraft, blackmagic, magic
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> external files ============================================== */
+/* ============================================================================================ */
+
+@import "pallete.less";
+@import "side-nav.less";
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> normalizing ============================================== */
+/* ============================================================================================ */
+
+* {
+	padding:0;
+	margin:0;
+}
+
+html {
+	overflow-y: auto !important;
+  overflow-x: hidden;
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+body {
+	background-color: #ffffff;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	word-wrap: break-word;
+  overflow-x: hidden;
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+img {
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+
+.mobile-show {
+	display:none;
+  @media (max-width:767px){
+    display:block;
+  }
+}
+.mobile-hide {
+	display:block;
+  @media (max-width:767px){
+    display:none;
+  }
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> body ============================================== */
+/* ============================================================================================ */
+
+#wrapper {
+ padding-left: 250px; /* side-nav size*/
+ transition: all 0.4s ease 0s;
+}
