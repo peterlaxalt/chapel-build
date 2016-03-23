@@ -12,61 +12,199 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /* ============================================================================================ */
-/* >>>>>>>>>>>>> external files ============================================== */
+/* >>>>>>>>>>>>> external files & mixins ============================================== */
 /* ============================================================================================ */
+
+@sidebar-size:250px;
+@hero-tint:rgba(0,0,0, .45);
+
+.side-shadow (@x: 5px, @y: 0px, @blur: 5px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
 
 @import "pallete.less";
-@import "side-nav.less";
+@import "normalize.less";
+@import "hero-animate.less";
 
 /* ============================================================================================ */
-/* >>>>>>>>>>>>> normalizing ============================================== */
+/* >>>>>>>>>>>>> buttons ============================================== */
 /* ============================================================================================ */
 
-* {
-	padding:0;
-	margin:0;
+.button {
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    letter-spacing:4px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
-html {
-	overflow-y: auto !important;
-  overflow-x: hidden;
-	font-family: 'Open Sans', sans-serif !important;
+.outline-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid @cream;
+  color: @cream;
+  border-radius:0px;
+  &:hover {
+    color: @cream;
+    border-radius:100px;
+    background-color: rgba(0, 0, 0, .40);
+  }
 }
+
+
+.mobile-break {
+    @media (max-width:767px) {
+      display:block;
+    }
+}
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> general architecture ============================================== */
+/* ============================================================================================ */
 
 body {
-	background-color: #ffffff;
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-	word-wrap: break-word;
-  overflow-x: hidden;
-	font-family: 'Open Sans', sans-serif !important;
+	background: @bg-grey !important;
+	color: @cream;
+  font-family: 'EB Garamond', serif !important;
 }
 
-img {
-    border: none;
-    max-width: 100%;
-    height: auto;
+#wrapper {
+ padding-left: @sidebar-size;
+ transition: all 0.4s ease 0s;
+ @media (max-width:767px) {
+   padding-left: 0;
+ }
 }
 
-.mobile-show {
-	display:none;
-  @media (max-width:767px){
+#wrapper.active {
+ @media (max-width:767px) {
+    position: relative;
+    left: @sidebar-size;
+    #sidebar-wrapper {
+      left: @sidebar-size;
+      width: @sidebar-size;
+      transition: all 0.4s ease 0s;
+    }
+ }
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+#sidebar-wrapper {
+  .side-shadow;
+  background: @side-grey;
+  margin-left: -(@sidebar-size);
+  left: @sidebar-size;
+  width: @sidebar-size;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+  @media (max-width:767px) {
+    left:0;
+  }
+}
+
+.sidebar-nav {
+  position: absolute;
+  text-align:center;
+  top: 0;
+  width: @sidebar-size;
+  list-style: none;
+  margin: 0;
+  padding: 30px;
+  font-size: 20px;
+  li {
+    margin-bottom:20px;
+  }
+  .logo {
+    margin: 50px 0px;
+  }
+  a {
+    color:@cream;
+    text-decoration:none;
+  }
+  a:hover {
+    color: darken(@cream,20%);
+  }
+}
+
+.side-foot {
+  bottom: 60px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color:@cream;
+  span {
     display:block;
   }
 }
-.mobile-hide {
-	display:block;
-  @media (max-width:767px){
-    display:none;
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> home ============================================== */
+/* ============================================================================================ */
+
+.hero-slide {
+  height:100vh;
+  background:
+  /* top, color & opacity adjustable in mixins */
+  linear-gradient(
+    @hero-tint,
+    @hero-tint
+  ),
+  /* bottom, background-image */
+  url('../assets/hero-home.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align:center;
+  padding:50px 0px;
+  h1 {
+    text-transform:uppercase;
+    color:@cream;
+    letter-spacing:5px;
+  }
+  .hero-img {
+    height:50vh;
+    background: url('../assets/hero-snek.png');
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center center;
+    margin:40px 0px;
+  }
+  span {
+    display:block;
   }
 }
 
-/* ============================================================================================ */
-/* >>>>>>>>>>>>> body ============================================== */
-/* ============================================================================================ */
+.location {
+  color:@cream;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  text-align:center;
+  padding:50px 20px;
+  .contact-break {
+    display:block;
+  }
+    @media (max-width:767px) {
+    .mobile-break {
+      display:block;
+    }
+    .line-bump {
+      margin-top:20px;
+    }
+  }
+}
 
-#wrapper {
- padding-left: 250px; /* side-nav size*/
- transition: all 0.4s ease 0s;
+.map {
+  height:400px;
+  background: url('../assets/map.png');
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
 }

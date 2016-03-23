@@ -1,1 +1,26 @@
 // main: ./main.less
+
+sidebar-wrapper {
+  background-color: @side-grey;
+  margin-left: -(@sidebar-size);
+  left: @sidebar-size;
+  width: @sidebar-size;
+  background: #CCC;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+  @media (max-width:767px) {
+    left:0;
+  }
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: @sidebar-size;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
