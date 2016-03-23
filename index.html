@@ -11,16 +11,15 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
   <!-- header-dots animation-->
   <script type="text/javascript">
     $( document ).ready(function() {
-      $(".fa").each( function() {
+      $(".floaty").each( function() {
         var randLeft = Math.floor(Math.random() * 90) + 1;
-        var randfontSize = Math.floor(Math.random() * 3) + 8;
+        var randfontSize = Math.floor(Math.random() * 3) +2;
         var randRotation = Math.floor(Math.random() * 360) + 1;
         var randDelay = Math.floor(Math.random() * 5) + 1;
         var randDuration = Math.floor(Math.random() * 10) + 5;
@@ -53,65 +52,282 @@
 </head>
   <body>
     <div id="wrapper">
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <img src="assets/chapel-logo.png" width="113px" height="75px" class="logo"/>
-          <li class="sidebar-brand"><a href="#">Location</a></li>
-          <li><a href="#">Drinks</a></li>
-          <li><a href="#">Wine</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="side-foot">
-          <span>© 2016 Chapel Tavern</span>
-          Reno, Nevada
-        </div>
-    </div>
 
-    <div id="page-content-wrapper">
-        <div class="page-content">
-            <div class="container-fluid">
-                <div class="row hero-slide">
-                    <div class="animate-concoct">
-                      <span class="floaty">.</span>
-                      <span class="floaty">.</span>
-                      <span class="floaty">.</span>
-                      <span class="floaty">x</span>
-                      <span class="floaty">x</span>
-                      <span class="floaty">x</span>
-                      <span class="floaty">o</span>
-                      <span class="floaty">o</span>
-                    </div>
-                    <div class="col-md-12">
-                        <h1>Salvation has Arrived</h1>
-                        <div class="hero-img"></div>
-                        <span><a href="drinks.html" class="button outline-button">DRINKS & WINE</a></span>
-                    </div>
-                </div>
-                <div class="row location">
-                    <div class="col-md-12">
-                        <p>
-                        <span class="contact-break">
-                            <span class="mobile-break">1099 South Virginia Street</span>
-                            <span class="mobile-break">Reno, NV</span>
-                            <span class="hidden-xs">•</span>
-                            <span class="mobile-break">+1.775.324.2244</span>
-                        </span>
-                        <span class="contact-break">
-                            <span class="mobile-break line-bump">Monday–Friday: </span>
-                            <span class="mobile-break">2p – 4a</span>
-                            <span class="hidden-xs">•</span>
-                            <span class="mobile-break line-bump">Saturday–Sunday: </span>
-                            <span class="mobile-break">10a – 4a</span>
-                        </span>
-                        </p>
-                    </div>
-                </div>
-                <div class="row map">
-                </div>
+    <!-- navbar-side -->
+      <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+            <img src="assets/chapel-logo.png" width="113px" height="75px" class="logo"/>
+            <li class="sidebar-brand"><a href="#tolocation">Location</a></li>
+            <li><a href="#todrinks">Drinks</a></li>
+            <li><a href="#towine">Wine</a></li>
+            <li><a href="#tocontact">Contact</a></li>
+          </ul>
+          <div class="side-foot">
+            <span>© 2016 Chapel Tavern</span>
+            Reno, Nevada
+          </div>
+      </div>
 
-            </div>
-        </div>
-    </div>
+    <!-- start page content -->
+      <div id="page-content-wrapper">
+          <div class="page-content">
+              <div class="container-fluid">
+
+                <!-- hero -->
+                  <div class="row hero-slide">
+                      <div class="col-md-12">
+                          <h1>Salvation has Arrived</h1>
+                          <div class="hero-img"></div>
+                          <span><a href="#todrinks" class="button outline-button">DRINKS & WINE</a></span>
+                          <span class="floaty">.</span>
+                          <span class="floaty">.</span>
+                          <span class="floaty">.</span>
+                          <span class="floaty">.</span>
+                          <span class="floaty">.</span>
+                          <span class="floaty">.</span>
+                          <span class="floaty">.</span>
+                          <span class="floaty">.</span>
+                      </div>
+                  </div>
+
+                <!-- location -->
+                  <div class="row location" id="tolocation">
+                      <div class="col-md-12">
+                          <p>
+                          <span class="contact-break">
+                              <span class="mobile-break">1099 South Virginia Street</span>
+                              <span class="mobile-break">Reno, NV</span>
+                              <span class="hidden-xs">•</span>
+                              <span class="mobile-break">+1.775.324.2244</span>
+                          </span>
+                          <span class="contact-break">
+                              <span class="mobile-break line-bump">Monday–Friday: </span>
+                              <span class="mobile-break">2p – 4a</span>
+                              <span class="hidden-xs">•</span>
+                              <span class="mobile-break line-bump">Saturday–Sunday: </span>
+                              <span class="mobile-break">10a – 4a</span>
+                          </span>
+                          </p>
+                      </div>
+                  </div>
+
+                <!-- map -->
+                  <div class="row map">
+                  </div>
+
+                <!-- intro -->
+                  <div class="row intro light-row content-row" id="todrinks">
+                      <div class="col-xs-12 col-md-6 content-left">
+                        <h3>Drink is our religion</h3>
+                        <img src="assets/break-ornament.png" width="77px" height="26px" />
+                        <p>We believe true grace exists in the balance of tradition and innovation.
+                        We hold dear the knowledge of our ancestors and harbor faith in what is to come.
+                        We warm our hearts with goodwill and good communion lubricated with an ever-evolving, ever-expanding host of spirits, wine and beer.
+                        Our mission is to share this joy.</p>
+                        <p>Redemption through revelry.
+                        Deliverance through drink.</p>
+                        <p><strong>Salvation has Arrived.</strong></p>
+                        <a href="#toselection" class="button red-button">View Selection</a>
+                      </div>
+                      <div class="hidden-sm hidden-xs col-md-6 content-right pattern-bg">
+                      </div>
+                  </div>
+
+                <!-- cocktail header -->
+                  <div class="row img-row content-row cocktail-header">
+                    <img src="assets/cocktail-ornament.png" width="64px" height="39px" />
+                    <h3>An ever-evolving, ever-expanding host of spirits, wine, and beer</h3>
+                  </div>
+
+                <!-- cocktail menu -->
+                  <div class="row menu-template light-row" id="toselection">
+                      <div class="col-xs-12 col-md-9 content-left">
+                        <h3>Cocktails</h3>
+                        <p>Our Crafted $10 Seasonal Selections</p>
+
+                        <!-- menu left -->
+                          <div class="col-md-6 menu-left">
+                            <div class="menu-item">
+                              <h4 class="red-wine">Menu Item 1</h4>
+                              <p class="menu-desc">
+                                A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                              </p>
+                            </div>
+                            <div class="menu-item">
+                              <h4 class="red-wine">Menu Item 1</h4>
+                              <p class="menu-desc">
+                                A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                              </p>
+                            </div>
+                            <div class="menu-item">
+                              <h4 class="white-wine">Menu Item 1</h4>
+                              <p class="menu-desc">
+                                A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                              </p>
+                            </div>
+                            <div class="menu-item">
+                              <h4 class="red-wine">Menu Item 1</h4>
+                              <p class="menu-desc">
+                                A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                              </p>
+                            </div>
+                          </div>
+
+                          <!-- menu right -->
+                          <div class="col-md-6 menu-right">
+                            <div class="menu-item">
+                              <h4 class="red-wine">Menu Item 1</h4>
+                              <p class="menu-desc">
+                                A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                              </p>
+                            </div>
+                            <div class="menu-item">
+                              <h4 class="white-wine">Menu Item 1</h4>
+                              <p class="menu-desc">
+                                A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                              </p>
+                            </div>
+                            <div class="menu-item">
+                              <h4 class="white-wine">Menu Item 1</h4>
+                              <p class="menu-desc">
+                                A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                              </p>
+                            </div>
+                            <div class="menu-item">
+                              <h4 class="white-wine">Menu Item 1</h4>
+                              <p class="menu-desc">
+                                A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                              </p>
+                            </div>
+                          </div>
+                        </div><!-- /content-left (aka the menu) -->
+
+                      <!-- menu right -->
+                        <div class="hidden-sm hidden-xs col-md-3 content-right pattern-bg">
+                        </div>
+
+                  </div><!-- /menu-template (aka the menu) -->
+
+                  <!-- wine header -->
+                    <div class="row img-row content-row wine-header">
+                      <img src="assets/cocktail-ornament.png" width="64px" height="39px" />
+                      <h3>Wine as nature intended</h3>
+                    </div>
+
+                    <!-- wine menu -->
+                      <div class="row menu-template light-row" id="towine">
+                          <div class="col-xs-12 col-md-9 content-left">
+                            <h3>Wine</h3>
+                            <p>Our selection from natural & organic winemakers.</p>
+
+                            <!-- menu left -->
+                              <div class="col-md-6 menu-left">
+                                <div class="menu-item">
+                                  <h4 class="red-wine">Menu Item 1</h4>
+                                  <p class="menu-desc">
+                                    A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                                  </p>
+                                </div>
+                                <div class="menu-item">
+                                  <h4 class="red-wine">Menu Item 1</h4>
+                                  <p class="menu-desc">
+                                    A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                                  </p>
+                                </div>
+                                <div class="menu-item">
+                                  <h4 class="white-wine">Menu Item 1</h4>
+                                  <p class="menu-desc">
+                                    A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                                  </p>
+                                </div>
+                                <div class="menu-item">
+                                  <h4 class="red-wine">Menu Item 1</h4>
+                                  <p class="menu-desc">
+                                    A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                                  </p>
+                                </div>
+                              </div>
+
+                              <!-- menu right -->
+                              <div class="col-md-6 menu-right">
+                                <div class="menu-item">
+                                  <h4 class="red-wine">Menu Item 1</h4>
+                                  <p class="menu-desc">
+                                    A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                                  </p>
+                                </div>
+                                <div class="menu-item">
+                                  <h4 class="white-wine">Menu Item 1</h4>
+                                  <p class="menu-desc">
+                                    A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                                  </p>
+                                </div>
+                                <div class="menu-item">
+                                  <h4 class="white-wine">Menu Item 1</h4>
+                                  <p class="menu-desc">
+                                    A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                                  </p>
+                                </div>
+                                <div class="menu-item">
+                                  <h4 class="white-wine">Menu Item 1</h4>
+                                  <p class="menu-desc">
+                                    A continuation of our smoked cocktail series exploring the possibilities that will be available if Nevada adopts the legal outlook of Washington or Colorado. Requires customer participation.
+                                  </p>
+                                </div>
+                              </div>
+                            </div><!-- /content-left (aka the menu) -->
+
+                          <!-- menu right -->
+                            <div class="hidden-sm hidden-xs col-md-3 content-right pattern-bg">
+                            </div>
+
+                      </div><!-- /menu-template (aka the menu) -->
+
+                      <!-- contact us -->
+                        <div class="row contact" id="tocontact">
+                          <div class="col-xs-12 col-md-9 content-left">
+                            <h3>Contact</h3>
+
+                            <!-- menu left -->
+                            <div class="col-md-6 menu-left">
+                              <div class="contact-group">
+                                <h4>Chapel Tavern</h4>
+                                <p class="info">
+                                  <span>1099 South Virginia Street</span>
+                                  <span>Reno, NV 89502</span>
+                                  <span>Located in Midtown District</span>
+                                </p>
+                              </div>
+                              <div class="contact-group">
+                                <h4>Hours</h4>
+                                <p class="info">
+                                  <span>Monday–Friday: 2p – 4a</span>
+                                  <span>Saturday–Sunday: 10a – 4a</span>
+                                </p>
+                              </div>
+                            </div>
+
+                            <!-- menu right -->
+                            <div class="col-md-6 menu-right">
+                              <div class="contact-group">
+                                <h4>Phone</h4>
+                                <p class="info">
+                                  <span>+1.775.324.2244</span>
+                                </p>
+                              </div>
+                              <div class="contact-group">
+                                <h4>Email</h4>
+                                <p class="info">
+                                  <span>info@chapeltavern.com</span>
+                                </p>
+                              </div>
+                            </div>
+                          </div> <!-- /content-left -->
+                        </div><!-- /contact -->
+
+              </div> <!-- /end conainer-fluid -->
+          </div>
+      </div>
     </div>
   </body>
 </html>

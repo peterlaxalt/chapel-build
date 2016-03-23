@@ -24,9 +24,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
 }
 
+@import "typography.less";
 @import "pallete.less";
 @import "normalize.less";
 @import "hero-animate.less";
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display+SC);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
 
 /* ============================================================================================ */
 /* >>>>>>>>>>>>> buttons ============================================== */
@@ -37,7 +40,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing:4px;
     margin: 4px 2px;
     cursor: pointer;
@@ -55,12 +58,65 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   }
 }
 
+.red-button {
+  background-color: fade(@chapel-red,100%);
+  border: 1px solid @chapel-red;
+  color: @cream;
+  border-radius:0px;
+	text-transform:uppercase;
+  &:hover {
+    color: @chapel-red;
+    border-radius:100px;
+    background-color: fade(@chapel-red,0%);
+  }
+}
+
 
 .mobile-break {
     @media (max-width:767px) {
       display:block;
     }
 }
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> rows ============================================== */
+/* ============================================================================================ */
+
+.light-row {
+	background-color: @cream;
+	color: @bg-grey;
+}
+
+.content-row {
+	padding:100px 0px;
+}
+
+.img-row {
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+	text-align:center;
+	padding-left:15%;
+	padding-right:15%;
+	img {
+		margin-bottom:20px;
+	}
+	h3 {
+	  color:@cream !important;
+	  font-size:28px;
+	  letter-spacing:13px;
+	  text-transform:uppercase;
+	  margin:0;
+	  line-height:46px;
+	  font-family: @head-font;
+	}
+}
+
+.pattern-bg {
+	background:url('../assets/menu-pattern.png');
+	background-size:30%;
+}
+
 /* ============================================================================================ */
 /* >>>>>>>>>>>>> general architecture ============================================== */
 /* ============================================================================================ */
@@ -68,7 +124,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 body {
 	background: @bg-grey !important;
 	color: @cream;
-  font-family: 'EB Garamond', serif !important;
+  font-family: @body-font;
 }
 
 #wrapper {
@@ -127,12 +183,15 @@ body {
     margin: 50px 0px;
   }
   a {
-    color:@cream;
+    color:@cream !important;
     text-decoration:none;
-  }
-  a:hover {
-    color: darken(@cream,20%);
-  }
+		&:visited, &:active {
+			color:@cream !important;
+		}
+		}
+		&:hover {
+	    color: darken(@cream,20%) !important;
+		}
 }
 
 .side-foot {
@@ -147,7 +206,7 @@ body {
 }
 
 /* ============================================================================================ */
-/* >>>>>>>>>>>>> home ============================================== */
+/* >>>>>>>>>>>>> hero ============================================== */
 /* ============================================================================================ */
 
 .hero-slide {
@@ -168,6 +227,7 @@ body {
     text-transform:uppercase;
     color:@cream;
     letter-spacing:5px;
+		font-family: @head-font;
   }
   .hero-img {
     height:50vh;
@@ -181,6 +241,10 @@ body {
     display:block;
   }
 }
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> location ============================================== */
+/* ============================================================================================ */
 
 .location {
   color:@cream;
@@ -207,4 +271,152 @@ body {
   background-size:cover;
   background-repeat:no-repeat;
   background-position:center center;
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> intro ============================================== */
+/* ============================================================================================ */
+
+.intro {
+	position:relative;
+	p {
+		color:@bg-grey;
+		font-size:18px;
+		letter-spacing:3px;
+		margin-top:15px;
+	}
+	h2 {
+		color:@chapel-red;
+		line-height:50px;
+		font-size:36px;
+		letter-spacing:4px;
+		font-family: @head-font;
+	}
+	strong {
+		color:@chapel-red;
+		text-transform:uppercase;
+		letter-spacing:4px;
+	}
+	.content-left {
+		padding:0 100px;
+	    @media (max-width:767px) {
+				padding:0 40px;
+				text-align:center;
+			}
+	}
+	.content-right {
+		top:0;
+		right:0;
+		bottom:0;
+		position:absolute;
+	}
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> cocktail header ============================================== */
+/* ============================================================================================ */
+
+.cocktail-header {
+	background:url('../assets/inside-building.jpg');
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> menu template ============================================== */
+/* ============================================================================================ */
+
+.menu-template {
+	padding:60px 0px;
+	position:relative;
+	p {
+		color:@bg-grey;
+		font-size:18px;
+		letter-spacing:3px;
+	}
+	.content-right {
+		top:0;
+		right:0;
+		bottom:0;
+		position:absolute;
+		}
+	.content-left {
+		padding:0 100px;
+		@media (max-width:767px) {
+			padding: 0 40px;
+		}
+		.menu-left, .menu-right {
+			padding: 0 20px 0 0 !important;
+			@media (max-width:767px) {
+				padding: 0px !important;
+			}
+		}
+		.menu-item {
+			margin-top:20px;
+			h4 {
+				font-size:24px;
+				margin:0px !important;
+			}
+			.red-wine {
+				color:@chapel-red;
+			}
+			.white-wine {
+				color:@chapel-orange;
+			}
+			.menu-desc {
+				font-size:16px;
+				letter-spacing:2px;
+			}
+		}
+	}
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> cocktail header ============================================== */
+/* ============================================================================================ */
+
+.wine-header {
+	background:url('../assets/wine.jpg');
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> contact ============================================== */
+/* ============================================================================================ */
+
+.contact {
+	padding:60px 0px;
+	position:relative;
+	p {
+		color:@cream;
+		font-size:18px;
+		letter-spacing:3px;
+	}
+	.content-right {
+		top:0;
+		right:0;
+		bottom:0;
+		position:absolute;
+		}
+	.content-left {
+		padding:0 100px;
+		@media (max-width:767px) {
+			padding: 0 40px;
+		}
+		.menu-left, .menu-right {
+			padding: 0 20px 0 0 !important;
+			@media (max-width:767px) {
+				padding: 0px !important;
+			}
+		}
+		.contact-group {
+			margin-top:20px;
+			h4 {
+				color:@chapel-red;
+				font-size:18px;
+				margin:0px !important;
+			}
+			.info {
+				font-size:14px;
+				letter-spacing:2px;
+			}
+		}
+	}
 }
